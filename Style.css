@@ -1,0 +1,9 @@
+.Start-Button {
+    -fx-font-size:10pt;
+    -fx-color:#29bb19;
+}
+
+.Stop-Button {
+       -fx-font-size:10pt;
+       -fx-color:#ea2222;
+}

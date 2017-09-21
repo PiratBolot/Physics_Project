@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <top>
+      <HBox alignment="CENTER" cache="true" prefHeight="49.0" prefWidth="800.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="Start_Button" mnemonicParsing="false" onAction="#start" styleClass="Start-Button" text="Старт" textAlignment="CENTER">
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </opaqueInsets></Button>
+            <Button fx:id="Stop_Button" mnemonicParsing="false" onAction="#stop" styleClass="Stop-Button" text="Стоп" />
+            <Button fx:id="Clear_Button" mnemonicParsing="false" onAction="#clear" text="Очистить" />
+            <Button fx:id="Reverse_Button" mnemonicParsing="false" onAction="#reverseVector" text="Реверс вектора скоростей" />
+         </children>
+         <opaqueInsets>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </opaqueInsets>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+   </top>
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="671.0" prefWidth="73.0" BorderPane.alignment="CENTER">
+         <children>
+            <Separator prefWidth="200.0" />
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox alignment="TOP_CENTER" prefHeight="671.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="Add_Button" mnemonicParsing="false" onAction="#addVertex" prefHeight="27.0" prefWidth="130.0" text="Добавить частицу">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding></Button>
+            <Separator prefWidth="200.0" />
+            <Button fx:id="Set1_Generator" mnemonicParsing="false" onAction="#generateSet1" prefHeight="25.0" prefWidth="160.0" text="Добавить 1 набор">
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin></Button>
+            <TextField fx:id="FirstSet_Size" prefHeight="25.0" prefWidth="160.0" promptText="5">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding></TextField>
+            <Button fx:id="Set2_Generator" mnemonicParsing="false" onAction="#generateSet2" prefHeight="25.0" prefWidth="160.0" text="Добавить 2 набор">
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin>
+            </Button>
+            <TextField fx:id="SecondSet_Size" prefHeight="25.0" prefWidth="160.0" promptText="5">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></TextField>
+            <Label fx:id="Warning" textOverrun="CLIP">
+               <VBox.margin>
+                  <Insets right="5.0" top="50.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+   </right>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="53.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane alignment="CENTER" hgap="10.0" minHeight="80.0" minWidth="100.0" prefHeight="127.0" prefWidth="900.0" vgap="10.0">
+              <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="318.0" minWidth="10.0" prefWidth="318.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="115.0" minWidth="0.0" prefWidth="48.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="163.0" minWidth="10.0" prefWidth="64.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="205.0" minWidth="10.0" prefWidth="160.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label alignment="CENTER" prefHeight="29.0" prefWidth="215.0" text="Диаметр частиц, 10^-2 м" GridPane.columnIndex="3">
+                     <font>
+                        <Font name="Aharoni Bold" size="13.0" />
+                     </font></Label>
+                  <TextField fx:id="Size_Field" promptText="30" GridPane.columnIndex="4" />
+                  <Button fx:id="Save_Button" mnemonicParsing="false" onAction="#saveSize" text="Сохранить" textAlignment="CENTER" GridPane.columnIndex="5" />
+                  <Label prefHeight="17.0" prefWidth="287.0" text="Молярная масса частиц первого набора, г/моль">
+                     <font>
+                        <Font name="Aharoni Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="FirstSet_Button" mnemonicParsing="false" onAction="#saveWeightFirstSet" text="Сохранить" GridPane.columnIndex="2" />
+                  <TextField fx:id="WeightFirst_Field" promptText="2" GridPane.columnIndex="1" />
+                  <Label text="Молярная масса частиц второго набора, г/моль" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Aharoni Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="WeightSecond_Field" promptText="32" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button fx:id="SecondSet_Button" mnemonicParsing="false" onAction="#saveWeightSecondSet" text="Сохранить" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Label prefHeight="29.0" prefWidth="189.0" text="Температура, К" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="15.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="TemperatureField" promptText="273,15" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#saveTemperature" text="Сохранить" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <opaqueInsets>
+                  <Insets bottom="20.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </GridPane>
+         </children></HBox>
+   </bottom>
+</BorderPane>
